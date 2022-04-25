@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Tutor Site</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+     <div>
+     	<h1>Register</h1>
+     	<form th:action="@{/process_register}" th:object="${user}" method="post">
+		  <label for="name">Name:</label><br>
+		  <input type="text" id="name" name="name" th:field="*{name}" required><br>
+		  <label for="username">Username:</label><br>
+		  <input type="text" id="username" name="username" th:field="*{username}" required><br>
+		  <label for="password">Password:</label><br>
+		  <input type="text" id="password" name="password" th:field="*{password}" required><br><br>
+		  <div>
+		    <input type="radio" id="student" name="label" value="Student" checked th:field="*{label}">
+		    <label for="student">Student</label>
+		  </div>
+		
+		  <div>
+		    <input type="radio" id="tutor" name="label" value="Tutor" th:field="*{label}" >
+		    <label for="tutor">Tutor</label>
+		  </div>
+		  
+		  <button type=submit id="submit">Submit</button>
+     	</form>
+     	
+     </div>
+</body>
+</html>

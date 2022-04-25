@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+	nav ul{height:200px; width:60%; background-color: #f1f1f1;}
+	nav ul{overflow:hidden; overflow-y:scroll;}
+</style>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Tutor Site</title>
+</head>
+<body>
+	<div class="topnav">
+	  <a th:href="@{/home}" id="home">Home</a>
+	  <a th:href="@{/schedule}" id="schedule">My Schedule</a>
+	  <a th:href="@{/newLesson}" id="lesson">Book New Lesson</a>
+	</div>
+	
+    <h2>My Lessons</h2>
+    	<div>
+	        <table class="table table-striped table-bordered">
+	            <thead class="thead-dark">
+	                <tr>
+	                    <th>Tutor ID</th>
+	                    <th>Student ID</th>
+	                    <th>Class Name</th>
+	                    <th>Class Date</th>
+	                    <th>Class Time</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr th:each="lesson: ${listTutorLessons}">
+	                    <td th:text="${lesson.tutorId}">Tutor ID</td>
+	                    <td th:text="${lesson.studentId}">Student ID</td>
+	                    <td th:text="${lesson.className}">Class Name</td>
+	                    <td th:text="${lesson.lessonDate}">Class Date</td>
+	                    <td th:text="${lesson.lessonTime}">Class Time</td>
+	                </tr>
+	            </tbody>
+	        </table>
+	    </div>
+
+
+</body>

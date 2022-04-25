@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Tutor Site</title>
+</head>
+<body>
+	<div class="topnav">
+	  <a th:href="@{/home}" id="home">Home</a>
+	</div>
+	
+	<h1>Set Schedule</h1>
+	<form th:action="@{/process_schedule}" th:object="${schedule}" method="post">
+	  <input type="checkbox" id="sun" value="sun" th:field="*{days}">
+	  <label for="sun">Sunday</label><br>
+	  <input type="checkbox" id="mon" value="mon" th:field="*{days}">
+	  <label for="mon">Monday</label><br>
+	  <input type="checkbox" id="tue" value="tue" th:field="*{days}">
+	  <label for="tue">Tuesday</label><br>
+	  <input type="checkbox" id="wed" value="wed" th:field="*{days}">
+	  <label for="wed">Wednesday</label><br>
+	  <input type="checkbox" id="thr" value="thr" th:field="*{days}">
+	  <label for="thr">Thursday</label><br>
+	  <input type="checkbox" id="fri" value="fri" th:field="*{days}">
+	  <label for="fri">Friday</label><br>
+	  <input type="checkbox" id="sat" value="sat" th:field="*{days}">
+	  <label for="sat">Saturday</label><br>
+	  <br><input type="submit" value="Submit">
+	</form>
+</body>

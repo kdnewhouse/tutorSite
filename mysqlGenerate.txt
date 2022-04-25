@@ -1,0 +1,33 @@
+create table users (
+	id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    label VARCHAR(10) NOT NULL
+);
+
+create table schedule (
+	id int(6) UNSIGNED NOT NULL,
+    days VARCHAR(100) NOT NULL,
+    foreign key (id) references users(id)
+);
+
+create table classes (
+	id int(10) UNSIGNED auto_increment PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+create table lessons (
+	id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	tutorId int(6) UNSIGNED NOT NULL,
+    studentId int(6) UNSIGNED NOT NULL,
+    classId int(10) UNSIGNED NOT NULL,
+	tutorName VARCHAR(100) NOT NULL,
+	studentName VARCHAR(100) NOT NULL,
+	className VARCHAR(100) NOT NULL,
+    lessonDate VARCHAR(3),
+    lessonTime time,
+    foreign key (tutorId) references users(id),
+    foreign key (studentId) references users(id),
+    foreign key (classId) references classes(id)
+);

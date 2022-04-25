@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Tutor Site</title>
+</head>
+<body>
+	<h2>Schedule Lesson</h2>
+	<form th:action="@{/process_newLesson}" th:object="${lesson}" method="post">
+		<label>Class:</label>
+		<select name="class" id="class" th:field="*{classId}">
+			<option th:each="class : ${allClasses}" th:value="${class.id}" th:text="${class.name}"></option>
+		</select>
+		<br><br>
+		<label>Student:</label>
+		<select name="student" id="student" th:field="*{studentId}">
+			<option th:each="student : ${allStudents}" th:value="${student.id}" th:text="${student.name}"></option>
+		</select>
+		<br><br>
+		<label>Tutor:</label>
+		<select name="tutor" id="tutor" th:field="*{tutorId}">
+			<option th:each="tutor : ${allTutors}" th:value="${tutor.id}" th:text="${tutor.name}"></option>
+		</select>
+		<br><br>
+		<label>Date:</label>
+		<select name="date" id="date"  th:field="*{lessonDate}">
+			<option value="sun">Sunday</option>
+			<option value="mon">Monday</option>
+			<option value="tue">Tuesday</option>
+			<option value="wed">Wednesday</option>
+			<option value="thr">Thursday</option>
+			<option value="fri">Friday</option>
+			<option value="sat">Saturday</option>
+		</select>
+		<br><br>
+		<label>Time:</label>
+		<select name="time" id="time" th:field="*{lessonTime}">
+			<option value="08:00:00">8:00</option>
+			<option value="09:00:00">9:00</option>
+			<option value="10:00:00">10:00</option>
+			<option value="11:00:00">11:00</option>
+			<option value="12:00:00">12:00</option>
+			<option value="13:00:00">13:00</option>
+			<option value="14:00:00">14:00</option>
+			<option value="15:00:00">15:00</option>
+			<option value="16:00:00">16:00</option>
+		</select>
+		<br><br>
+		<input type="submit" value="Submit">
+	</form>	
+</body>

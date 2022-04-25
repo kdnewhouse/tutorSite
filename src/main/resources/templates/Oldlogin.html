@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Tutor Site</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+     <div>
+     	<h1>Tutoring 101</h1>
+     	<form>
+		  <label for="username">Username:</label><br>
+		  <input type="text" id="username" name="username"><br>
+		  <label for="password">Password:</label><br>
+		  <input type="text" id="password" name="password"><br><br>
+		  <input type="submit" value="Student">
+		  <input type="submit" value="Teacher">
+		  <h3><a th:href="@{/register}">Register</a></h3>
+     	</form>
+     	
+     </div>
+</body>
+</html>
